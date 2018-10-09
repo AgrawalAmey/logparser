@@ -5,6 +5,8 @@ import os
 import gc
 import re 
 import numpy as np
+from statistics import mean
+from collections import defaultdict
 
 class Partition:
 	"""
@@ -38,7 +40,7 @@ class Para:
 	def __init__(self, path='../Data/2kProxifier/',logname='rawlog.log', savePath='./results_2kProxifier/',
 				 saveFileName='template', maxEventLen = 120, step2Support = 0, PST = 0.0,
 				 CT = 0.35, lowerBound = 0.25, upperBound = 0.9, usePST = False,
-				 removable=True, removeCol=[0,1,2,3,4],regular=True, rex=['blk_(|-)[0-9]+','(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)']):
+				 removable=True, removeCol=[0,1,2,3,4],regular=True, rex=[('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]):
 		self.maxEventLen = maxEventLen
 		self.path = path
 		self.logname = logname
@@ -103,10 +105,9 @@ class IPLoM:
 
 				if self.para.regular:					
 					for currentRex in self.para.rex:
-						line=re.sub(currentRex,'',line)
-					line=re.sub('node-[0-9]+','node-',line) #For HPC only 
+						line=re.sub(currentRex[0], currentRex[1], line)
 						
-				wordSeq=line.strip().split('\t')[1].split()
+				wordSeq=line.strip().split()
 				#print (wordSeq)
 				if self.para.removable:
 					wordSeq=[word for i, word in enumerate(wordSeq) if i not in self.para.removeCol]
@@ -491,13 +492,18 @@ class IPLoM:
 		writeEvent.close()
 
 	def WriteLogWithEventID(self, outputPath):
-		
+		length_dict = defaultdict(list)
 		for logL in self.output:
-			currentEventID = logL[1]			
-			writeOutput = open(outputPath + str(currentEventID) + '.txt', 'a')
-			logStr = str(logL[0]) + '\t' + ' '.join(logL[2:])
-			writeOutput.write(logStr + '\n')
-			writeOutput.close()
+			currentEventID = logL[1]
+			length_dict[currentEventID].append(len(logL) - 2)
+			# writeOutput = open(outputPath + str(currentEventID) + '.txt', 'a')
+			# logStr = str(logL[0]) + '\t' + ' '.join(logL[2:])
+			# writeOutput.write(logStr + '\n')
+			# writeOutput.close()
+		
+		with open(outputPath + "means.txt", "w") as f:
+			outputLines = ["{}\t{}".format(k, mean(v)) for (k, v) in length_dict.items()]
+			f.write("\n".join(outputLines))
 
 
 	"""
@@ -693,3 +699,10 @@ class IPLoM:
 		for fileName in fileList:
 	 		os.remove(dirPath+"/"+fileName)
 
+path = '../../datasets/'
+logName = 'HPC.log'
+removeCol = [0]
+rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+para = Para(rex=rex, path=path, logname=logName, removeCol=removeCol)
+myparser=IPLoM(para)
+myparser.mainProcess()

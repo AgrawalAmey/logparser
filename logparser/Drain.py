@@ -4,7 +4,7 @@ import time
 import numpy as np
 import gc
 import math
-
+from statistics import mean
 
 #Similarity layer
 class Logcluster:
@@ -26,10 +26,13 @@ class Node:
 
 #Output layer
 class Ouputcell:
-	def __init__(self, logIDL=None, parentL=None):
+	def __init__(self, logIDL=None, logLengthL=None, parentL=None):
 		if logIDL is None:
 			logIDL = []
+		if logLengthL is None:
+			logLengthL = []
 		self.logIDL = logIDL
+		self.logLengthL = logLengthL
 		self.outTemplates = ''
 		self.active = True
 		parentL = []
@@ -361,7 +364,7 @@ class Drain:
 
 		if similarClust is not None and similarity>self.para.mt:		
 			similarClust.outcell.logIDL = similarClust.outcell.logIDL + logClust.outcell.logIDL
-
+			similarClust.outcell.logLengthL = similarClust.outcell.logLengthL + logClust.outcell.logLengthL
 			removeOutputCell = logClust.outcell
 
 			for parent in removeOutputCell.parentL:
@@ -369,6 +372,7 @@ class Drain:
 				parent.outcell = similarClust.outcell
 
 			removeOutputCell.logIDL = None
+			removeOutputCell.logLengthL = None
 			removeOutputCell.active = False
 
 		
@@ -388,13 +392,13 @@ class Drain:
 			logClust.outcell.outTemplates = logClust.outcell.outTemplates + currentTemplate
 
 		for idx, outputCell in enumerate(outputCellL):
-			writeTemplate.write(str(idx+1) + '\t' + outputCell.outTemplates+'\n')
+			writeTemplate.write(str(idx+1) + '\t' + outputCell.outTemplates + '\t' + str(mean(outputCell.logLengthL)) + '\n')
 
-			writeID = open(self.para.savePath + self.para.saveFileName + str(idx+1) + '.txt', 'w')
+			# writeID = open(self.para.savePath + self.para.saveFileName + str(idx+1) + '.txt', 'w')
 
-			for logID in outputCell.logIDL:
-				writeID.write(str(logID) + '\n')
-			writeID.close()
+			# for logID in outputCell.logIDL:
+			# 	writeID.write(str(logID) + '\n')
+			# writeID.close()
 
 			# print (outputCell.outTemplates)
 
@@ -419,6 +423,8 @@ class Drain:
 				if self.para.removeCol is not None:
 					logmessageL = [word for i, word in enumerate(logmessageL) if i not in self.para.removeCol]
 				cookedLine = ' '.join(logmessageL)
+				
+				logLength = len(logmessageL)
 
 				#LAYER--Preprocessing
 				for currentRex in self.para.rex:
@@ -434,7 +440,7 @@ class Drain:
 
 				# match no existing log cluster
 				if matchCluster is None:
-					newOCell = Ouputcell(logIDL=[logID])
+					newOCell = Ouputcell(logIDL=[logID], logLengthL=[logLength])
 					# newOCell = Ouputcell(logIDL=[line.strip()]) #for debug
 
 					newCluster = Logcluster(logTemplate=logmessageL, outcell=newOCell)
@@ -465,6 +471,7 @@ class Drain:
 				else:
 					newTemplate, numUpdatedToken = self.getTemplate(logmessageL, matchCluster.logTemplate)
 					matchCluster.outcell.logIDL.append(logID)
+					matchCluster.outcell.logLengthL.append(logLength)
 					# matchCluster.outcell.logIDL.append(line.strip()) #for debug
 
 					if ' '.join(newTemplate) != ' '.join(matchCluster.logTemplate):
@@ -502,12 +509,15 @@ class Drain:
 # 	mt = 1
 
 # elif dataset == 2:
-# path = '../../datasets/'
-# logName = 'HDFS.log'
-# dataPath = '../data/datasets/HPC/'
-# removeCol = []
-# rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
-# mt = 1
+path = '../../datasets/'
+logName = 'HPC.log'
+removeCol = [0]
+rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+mt = 1
+para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, mt=mt)
+myparser=Drain(para)
+myparser.mainProcess()
+
 
 # elif dataset == 3:
 # 	dataPath = '../data/datasets/Thunderbird/'
@@ -515,14 +525,18 @@ class Drain:
 # 	mt = 1
 
 # elif dataset == 4:
-path = '../../datasets/'
-logName = 'HDFS.log'
-# path = '../data/2kHDFS/'
-# logName = 'rawlog.log'
-removeCol = [0,1,2,3,4]
-rex = [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
-mt = 1
-delimiters = '\s+'
+# path = '../../datasets/'
+# logName = 'HDFS.log'
+# # path = '../data/2kHDFS/'
+# # logName = 'rawlog.log'
+# removeCol = [0,1,2,3,4]
+# rex = [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+# mt = 1
+# delimiters = '\s+'
+# para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
+# myparser=Drain(para)
+# myparser.mainProcess()
+
 
 # elif dataset == 5:
 # 	dataPath = '../data/datasets/Zookeeper/'
@@ -564,6 +578,6 @@ delimiters = '\s+'
 # 	mt = 0.95
 
 
-para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
-myparser=Drain(para)
-myparser.mainProcess()
+# para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
+# myparser=Drain(para)
+# myparser.mainProcess()

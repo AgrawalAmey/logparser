@@ -29,7 +29,7 @@ import gc
 
 class Para:
 	def __init__(self,path='../Data/2kBGL/',logname='rawlog.log',removable=True,removeCol=[0,1,2,3,4,5],regular=True,
-	rex=['blk_(|-)[0-9]+','(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)'],savePath='./results_2kBGL/',saveFileName='template',groupNum=14):# line 66,change the regular expression replacement code
+	rex=[('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],savePath='./results_2kBGL/',saveFileName='template',groupNum=14):# line 66,change the regular expression replacement code
 		self.path=path
 		self.logname=logname
 		self.removable=removable
@@ -61,9 +61,7 @@ class LogSig:
 			for line in lines:
 				if self.para.regular:
 					for currentRex in self.para.rex:
-						line=re.sub(currentRex,'',line)
-						#line=re.sub(currentRex,'core.',line) # For BGL data only
-					#line=re.sub('node-[0-9]+','node-',line) #For HPC only 
+						line=re.sub(currentRex[0], currentRex[1], line)
 				wordSeq=line.strip().split()
 				if self.para.removable:
 					wordSeq=[word for i, word in enumerate(wordSeq) if i not in self.para.removeCol]
@@ -269,3 +267,12 @@ def deleteAllFiles(dirPath):
 	fileList = os.listdir(dirPath)
 	for fileName in fileList:
  		os.remove(dirPath+"/"+fileName)
+
+
+path = '../../datasets/'
+logName = 'HPC.log'
+removeCol = [0]
+rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+para = Para(rex=rex, path=path, logname=logName, removeCol=removeCol, groupNum=51)
+myparser = LogSig(para)
+myparser.mainProcess()
