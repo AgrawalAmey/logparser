@@ -13,7 +13,6 @@ import numpy as np
 import pandas as pd
 import hashlib
 from datetime import datetime
-from statistics import mean
 
 class Node:
     def __init__(self, format='', logIDL=None, logLengthL=None, childL=None):

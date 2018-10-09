@@ -1,0 +1,147 @@
+1	resourcemgmtdaeomon nodeNum server subsys * 1 failed to configure resourcemgmt subsystem err = 10	---		14
+2	nodeNum unix.hw * * 1 Component State Change: Component * is in the * state *	---		16
+3	node-ms0 unix.hw * * 1 Component State Change: Component * is in the * state *	---		16
+4	nodeNum action start * 1 * (command *	---		9
+5	* action start * 1 * (command *	---		9
+6	* * success * 1 Command has completed successfully	---		9
+7	* boot_cmd new * 1 Targeting * and nodes:nodeNum	---		9
+8	* * new * 1 Targeting * and *	---		9
+9	* * new * 1 Targeting * and * * child of command *	---		14
+10	* * new * 1 Targeting * and * *	---		10
+11	* * new * 1 Targeting * and * child of command *	---		13
+12	* * new * 1 Targeting * * * * * *	---		12
+13	* * new * 1 Targeting * * * * *	---		11
+14	* boot_cmd new * 1 Targeting domains:node-D7 and * * * * * * * child of command *	---		19
+15	* * new * 1 Targeting * and * * * * * * *	---		15
+16	* boot_cmd new * 1 Targeting domains:node-D7 and * * * * * * * * child of command *	---		20
+17	* * new * 1 Targeting * and * * * * * * * *	---		16
+18	2150 boot_cmd new 1076538394 1 Targeting domains:node-D[1-6] and nodes:node-[35-63\ 67-95\ 99-127\ 131-159\ 163-191\ 194-223]	---		14
+19	2143 boot_cmd new 1076537859 1 Targeting domains:node-D[1-6] and nodes:node-[32-34\ 64-66\ 96-98\ 128-130\ 160-162\ 192-194]	---		14
+20	* * new * 1 Targeting * * * * * * * * * * * *	---		18
+21	* shutdown_cmd new * 1 Targeting domains:node-D7 and nodes:node-[224\ 228\ 232]	---		11
+22	2421 boot_cmd new 1077881135 1 Targeting domains:node-D[0-5] and nodes:node-[8-31\ 40-63\ 72-95\ 104-127\ 136-159\ 168-191]	---		14
+23	2625 boot_cmd new 1079249214 1 Targeting domains:node-D5 and nodes:node-[164\ 171-174\ 176-179]	---		11
+24	2530 boot_cmd new 1078962940 1 Targeting domains:node-D0 and nodes:node-[7\ 9\ 18-19]	---		11
+25	* boot_cmd * * 1 * * * * * * * *	---		13
+26	3436 boot_cmd new 1109728734 1 Targeting domains:node-D[1\ 3-5] and nodes:node-[33\ 96\ 129\ 160]	---		13
+27	3428 boot_cmd new 1109711925 1 Targeting domains:node-D[1\ 3\ 5] and nodes:node-[34\ 97\ 166]	---		13
+28	3893 boot_cmd new 1129818009 1 Targeting domains:node-D[0-1\ 3\ 7] and nodes:node-[31\ 38\ 116\ 235]	---		14
+29	nodeNum node psu * 1 psu failure\ *	---		8
+30	* switch_module psu * 1 PSU status ( * * )	---		11
+31	nodeNum node temphigh * 1 * threshold exceeded	---		9
+32	* switch_module temphigh * 1 Temperature * exceeds warning threshold	---		10
+33	* clusterfilesystem clusterfilesystem.no_server * 1 ClusterFileSystem: There is no server for ServerFileSystem domain *	---		14
+34	* clusterfilesystem clusterfilesystem.no_server * 1 ClusterFileSystem: There is no server for ServerFileSystem domain cluster_root	---		14
+35	nodeNum unix.hw net.niff.down * 1 NIFF: node nodeNum detected a failed network connection on network IPAdd via interface *	---		19
+36	* clusterfilesystem fdmn.panic * 1 ServerFileSystem: An ServerFileSystem domain panic has occurred on *	---		14
+37	Interconnect-0N00 switch_module fan * 1 Fan speeds ( * * * * * * )	---		15
+38	nodeNum node fan * 1 fan failure\ *	---		8
+39	* * abort * 1 Command has been aborted	---		9
+40	nodeNum action abort * 1 * (command *	---		8
+41	* * * * 1 Command Failed on: *	---		9
+42	* * * * 1 Command Failed on: nodeNum	---		9
+43	* * * * 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		16
+44	3503 boot_cmd * * 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		28
+45	* * * * 1 Failed subcommands *	---		8
+46	* * * * 1 Failed subcommands * * *	---		10
+47	* * * * 1 Command Failed on: nodeNum\ nodeNum\ nodeNum	---		11
+48	* switch_module control * * power/control ok	---		7
+49	* switch_module control * 1 power/control problem	---		7
+50	* switch_module control * 1 no recent update	---		8
+51	* switch_module control * 1 update received	---		7
+52	* switch_module * * 1 Link error	---		7
+53	* switch_module * * 1 Link in reset	---		8
+54	* switch_module * * 1 Link ok	---		7
+55	* switch_module bcast-error * 1 Link error on broadcast tree *	---		11
+56	* clusterfilesystem fdmn.full * 1 ServerFileSystem: ServerFileSystem domain * is full	---		11
+57	clusterfilesystem fdmn.full * 1 ServerFileSystem: ServerFileSystem domain * is full	---		11
+58	* clusterfilesystem clusterfilesystem.not_served * 1 ClusterFileSystem: ServerFileSystem domain * is no longer served by node nodeNum	---		16
+59	full partition status * * running	---		6
+60	nodeNum node status * * configured out	---		7
+61	full partition status * 1 *	---		6
+62	* * status * 1 running	---		6
+63	nodeNum node status * 1 * *	---		7
+64	* * status * 1 not responding	---		7
+65	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		22
+66	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		16
+67	* domain status * * inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		19
+68	nodeNum node status * 1 *	---		6
+69	* node status * * running	---		6
+70	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok>	---		13
+71	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		31
+72	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		37
+73	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		55
+74	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		43
+75	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		25
+76	nodeNum node status * * running	---		6
+77	* tserver status * 1 responding	---		6
+78	* tserver status * 1 not-responding	---		6
+79	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		52
+80	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		28
+81	nodeNum node status * * not responding	---		7
+82	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		40
+83	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		46
+84	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		103
+85	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		34
+86	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		49
+87	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		94
+88	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		82
+89	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum * <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum * <ok>	---		97
+90	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum * <ok> nodeNum * <ok>	---		91
+91	full partition status * * *	---		6
+92	* * status * 0 not responding	---		7
+93	nodeNum node status * * active	---		6
+94	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		100
+95	* domain status * 1 inconsistent nodesets nodeNum * <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum * <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok>	---		64
+96	* domain status * 1 inconsistent nodesets nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum * <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok>	---		61
+97	* domain status * 1 inconsistent nodesets nodeNum 0x1fffffffe <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok> nodeNum * <ok>	---		79
+98	node-D7 domain status 1107904084 1 inconsistent nodesets nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok> nodeNum 0x1fffffffc <ok>	---		88
+99	node-D0 domain status 1123708860 1 inconsistent nodesets nodeNum 0x1ffe69dfe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok> nodeNum 0x1fffffffe <ok>	---		85
+100	* gige fan.failed * 1 fan2 has failed	---		8
+101	* gige temperature * 1 warning	---		6
+102	* gige temperature * 1 critical	---		6
+103	* gige temperature * 1 normal	---		6
+104	nodeNum node temperature 1073204490 1 ambient=36	---		6
+105	nodeNum node temperature * * *	---		6
+106	node-ms0 node temperature * 1 *	---		6
+107	nodeNum node temperature 1120315831 0	---		5
+108	nodeNum action error * 1 * (command * Error: Unknown We failed to determine the state of this node	---		19
+109	nodeNum action error * 1 halt (command * Error: scrun failed\ couldn\047t send shutdown command	---		16
+110	* * error * 1 Command Failed on: nodeNum\ nodeNum	---		10
+111	1887 shutdown_cmd error 1072761995 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		15
+112	nodeNum action error * 1 halt (command * Error: timeout waiting for SRM prompt	---		14
+113	nodeNum action error * 1 * (command * Error: Console-Busy Port already in use	---		14
+114	* switch_module error * * Linkerror event interval expired	---		9
+115	nodeNum action error 1074121664 1 clusterAddMember (command 1900) Error: cluster_add_member failed unexpectedly\ check /cluster/admin/cluster_add_member.log: <ABORT code errored: kill: 601373: no such process>	---		23
+116	nodeNum action error * 1 risBoot (command * Error: Timed out while waiting for SRM prompt: <ABORT code completed>	---		19
+117	nodeNum action error * 1 risBoot (command * Error: failed to RIS boot: <ABORT code completed>	---		16
+118	nodeNum action error * 1 * (command * Error: * * * * * * * <ABORT code completed>	---		19
+119	1903 install_cmd error 1074134880 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum	---		12
+120	nodeNum action error * 1 member_delete (command * Error: nodeNum is NOT a member of cluster *	---		17
+121	nodeNum action error 1074203174 1 bootGenvmunix (command 1918) Error: node returned to srm while booting: <ABORT code completed>	---		18
+122	* * error * 1 Failed subcommands * *	---		9
+123	2095 boot_cmd error 1076182302 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		27
+124	nodeNum action error * 1 boot (command * Error: HALT asserted\ cannot continue	---		14
+125	* boot_cmd error * 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		39
+126	nodeNum action error * 1 boot (command 2092) Error: timeout waiting for Loading LMF licenses	---		15
+127	nodeNum action error * 1 boot (command * Error: timeout while booting.	---		12
+128	nodeNum action error * 1 boot (command * Error: node went to SRM while trying to boot	---		17
+129	* action error * 1 haltcluster (command * Error: timeout waiting for SRM prompts	---		14
+130	2119 shutdown_cmd error 1076534242 1 Failed subcommands 2120\ 2123\ 2127	---		10
+131	2112 shutdown_cmd error 1076485276 1 Command Cancelled - cluster would lose quorum	---		12
+132	nodeNum action error * 1 halt (command * Error: Couldn\047t Connect to console (state = REFUSED)	---		16
+133	nodeNum action error * 1 clusterAddMember (command * Error: Cannot run clusterAddMember\ because nodeNum connection state is REFUSED and needs to be SRM	---		24
+134	2201 boot_cmd error 1076874913 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		37
+135	nodeNum action error * 1 boot (command * Error: node went to SRM while booting	---		15
+136	* boot_cmd error 1077817910 1 Failed subcommands 2333\ 2336\ 2339\ *	---		11
+137	* action error * 1 haltcluster (command * Error: haltcluster: bad spawn id	---		13
+138	nodeNum action error * 1 * (command * Error: * * * * * *	---		15.932203389830509
+139	3018 boot_cmd error 1086026061 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		13
+140	2987 shutdown_cmd error 1085980335 1 Failed subcommands 2988\ 2989\ 2990\ 2991\ 2992\ 2994\ 2995	---		14
+141	* shutdown_cmd error * 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		40
+142	3211 boot_cmd error 1098717001 1 Command Failed on: nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum\ nodeNum	---		32
+143	3548 shutdown_cmd error 1114095166 1 Failed subcommands 3549\ 3550\ 3551\ 3552\ 3553\ 3554\ 3555\ 3556	---		15
+144	* switch_module error * * link errors remain current	---		9
+145	nodeNum action error * 1 boot (command * Error: System could not find kernel	---		14
+146	nodeNum action error 1126813594 1 boot (command 3833) Error: CMF-Port This node\047s port is not connected	---		16
+147	nodeNum unix.hw net.niff.up * 1 NIFF: node nodeNum has detected an available network connection on network IPAdd via interface *	---		20

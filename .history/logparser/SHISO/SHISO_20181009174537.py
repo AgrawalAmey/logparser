@@ -13,25 +13,21 @@ import numpy as np
 import pandas as pd
 import hashlib
 from datetime import datetime
-from statistics import mean
 
 class Node:
-    def __init__(self, format='', logIDL=None, logLengthL=None, childL=None):
+    def __init__(self, format='', logIDL=None, childL=None):
         self.format = format
         if logIDL is None:
             logIDL = []
-        if logLengthL is None:
-            logLengthL = []
         if childL is None:
             childL = []
         self.logIDL = logIDL
-        self.logLengthL = logLengthL
         self.childL = childL
 
 
 class LogParser:
     def __init__(self, log_format, formatTable=None, indir='./', outdir='./results/', maxChildNum=4, mergeThreshold=0.1,
-                 formatLookupThreshold=0.3, superFormatThreshold=0.85, rex=[]):
+                 formatLookupThreshold=0.3, superFormatThreshold=0.85, rex=[], find_mean=False):
         """
         Attributes
         ----------
@@ -52,6 +48,7 @@ class LogParser:
         self.formatLookupThreshold = formatLookupThreshold
         self.superFormatThreshold = superFormatThreshold
         self.rex = rex
+        self.find_mean = find_mean
 
         if formatTable is None:
             formatTable = dict()
@@ -223,7 +220,6 @@ class LogParser:
 
             else:           
                 selectNode.logIDL.append(n.logIDL[0])
-                selectNode.logLengthL.append(n.logLengthL[0])
                 if ' '.join(f) != ' '.join(selectNode.format):
                     selectNode.format = f
                     newFormat = True
@@ -262,11 +258,9 @@ class LogParser:
             #If we need to generate new format
             if len(superF) != 0:
                 nodemax.logIDL.extend(n.logIDL)
-                nodemax.logLengthL.extend(n.logLengthL)
                 nodemax.format = superF
                 n.format = ''
                 n.logIDL = []
-                n.logLengthL = []
 
                 #Move the children of the deleted Node into the right place
                 if len(n.childL) != 0:
@@ -294,9 +288,7 @@ class LogParser:
                 #Already exist this superformat in the table. currently brute force make one of the node empty.
                 else:
                     self.formatTable[' '.join(superF)][1].logIDL.extend(nodemax.logIDL)
-                    self.formatTable[' '.join(superF)][1].logLengthL.extend(nodemax.logLengthL)
                     nodemax.logIDL = []
-                    nodemax.logLengthL = []
                     nodemax.format = ''
     
 
@@ -319,14 +311,13 @@ class LogParser:
             template = ' '.join(currentNode.format)
             eid = hashlib.md5(template.encode('utf-8')).hexdigest()[0:8]
             occurence = len(currentNode.logIDL)
-            mean_length = mean(currentNode.logLengthL)
-            df_event.append([eid, template, occurence, mean_length])
+            df_event.append([eid, template, occurence])
 
             for logid in currentNode.logIDL:
                 templates[logid-1] = template
                 ids[logid-1] = eid
 
-        df_event = pd.DataFrame(df_event, columns=['EventId', 'EventTemplate', 'Occurrences', 'Average Match Length'])
+        df_event = pd.DataFrame(df_event, columns=['EventId', 'EventTemplate', 'Occurrences'])
 
         self.df_log['EventId'] = ids
         self.df_log['EventTemplate'] = templates

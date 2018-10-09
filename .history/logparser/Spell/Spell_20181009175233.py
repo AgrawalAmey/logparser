@@ -16,10 +16,9 @@ from statistics import mean
 class LCSObject:
     """ Class object to store a log group with the same template
     """
-    def __init__(self, logTemplate='', logIDL=[], logLengthL=[]):
+    def __init__(self, logTemplate='', logIDL=[]):
         self.logTemplate = logTemplate
         self.logIDL = logIDL
-        self.logLengthL = logLengthL
 
 
 class Node:
@@ -202,7 +201,7 @@ class LogParser:
             for logid in logclust.logIDL:
                 templates[logid - 1] = template_str
                 ids[logid - 1] = eid
-            df_event.append([eid, template_str, len(logclust.logIDL), mean(logclust.logLengthL)])
+            df_event.append([eid, template_str, len(logclust.logIDL), mean(match_lengths)])
         df_event = pd.DataFrame(df_event, columns=['EventId', 'EventTemplate', 'Occurrences', 'Average Match Length'])
         self.df_log['EventId'] = ids
         self.df_log['EventTemplate'] = templates
@@ -239,7 +238,6 @@ class LogParser:
         for idx, line in self.df_log.iterrows():
             logID = line['LineId']
             logmessageL = filter(lambda x: x != '', re.split(r'[\s=:,]', self.preprocess(line['Content'])))
-            logLength = len(logmessageL)
             constLogMessL = [w for w in logmessageL if w != '*']
 
             #Find an existing matched log cluster
@@ -253,7 +251,7 @@ class LogParser:
 
                     # Match no existing log cluster
                     if matchCluster is None:
-                        newCluster = LCSObject(logTemplate=logmessageL, logIDL=[logID], logLengthL=[logLength])
+                        newCluster = LCSObject(logTemplate=logmessageL, logIDL=[logID], logLengthL=[len(logmessageL)])
                         logCluL.append(newCluster)
                         self.addSeqToPrefixTree(rootNode, newCluster)
                     #Add the new log message to the existing cluster
@@ -266,7 +264,6 @@ class LogParser:
                             self.addSeqToPrefixTree(rootNode, matchCluster)
             if matchCluster:
                 matchCluster.logIDL.append(logID)
-                matchCluster.logLengthL.append(logLength)
             count += 1
             if count % 1000 == 0 or count == len(self.df_log):
                 print 'Processed {0:.1f}% of log lines.'.format(count * 100.0 / len(self.df_log))

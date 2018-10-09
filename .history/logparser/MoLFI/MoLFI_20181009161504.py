@@ -51,12 +51,8 @@ class LogParser():
 
         occ_dict = dict(log_dataframe['EventTemplate'].value_counts())
         df_event = pd.DataFrame()
-        log_dataframe["Length"] = [len(x.split(" ")) for x in log_dataframe["Content"]]
-        event_and_match_length_dict = log_dataframe.groupby(["EventTemplate"])["Length"].mean().to_dict()
-        df_event['EventTemplate'] = [x for (x, y) in  event_and_match_length_dict.items()]
+        df_event['EventTemplate'] = log_dataframe['EventTemplate'].unique()
         df_event['Occurrences'] = df_event['EventTemplate'].map(occ_dict)
-        df_event['Average Match Length'] = [y for (x, y) in  event_and_match_length_dict.items()]
-
         df_event['EventId'] = df_event['EventTemplate'].map(lambda x: hashlib.md5(x.encode('utf-8')).hexdigest()[0:8])
         df_event.to_csv(os.path.join(self.output_dir, log_file + '_templates.csv'), index=False, columns=["EventId", "EventTemplate", "Occurrences"])
         log_dataframe.to_csv(os.path.join(self.output_dir, log_file + '_structured.csv'), index=False)

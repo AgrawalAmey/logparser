@@ -238,8 +238,8 @@ class LogParser:
         count = 0
         for idx, line in self.df_log.iterrows():
             logID = line['LineId']
-            logmessageL = filter(lambda x: x != '', re.split(r'[\s=:,]', self.preprocess(line['Content'])))
             logLength = len(logmessageL)
+            logmessageL = filter(lambda x: x != '', re.split(r'[\s=:,]', self.preprocess(line['Content'])))
             constLogMessL = [w for w in logmessageL if w != '*']
 
             #Find an existing matched log cluster

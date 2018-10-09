@@ -13,7 +13,6 @@ import numpy as np
 import pandas as pd
 import hashlib
 from datetime import datetime
-from statistics import mean
 
 class Node:
     def __init__(self, format='', logIDL=None, logLengthL=None, childL=None):
@@ -31,7 +30,7 @@ class Node:
 
 class LogParser:
     def __init__(self, log_format, formatTable=None, indir='./', outdir='./results/', maxChildNum=4, mergeThreshold=0.1,
-                 formatLookupThreshold=0.3, superFormatThreshold=0.85, rex=[]):
+                 formatLookupThreshold=0.3, superFormatThreshold=0.85, rex=[], find_mean=False):
         """
         Attributes
         ----------
@@ -52,6 +51,7 @@ class LogParser:
         self.formatLookupThreshold = formatLookupThreshold
         self.superFormatThreshold = superFormatThreshold
         self.rex = rex
+        self.find_mean = find_mean
 
         if formatTable is None:
             formatTable = dict()
@@ -319,14 +319,13 @@ class LogParser:
             template = ' '.join(currentNode.format)
             eid = hashlib.md5(template.encode('utf-8')).hexdigest()[0:8]
             occurence = len(currentNode.logIDL)
-            mean_length = mean(currentNode.logLengthL)
-            df_event.append([eid, template, occurence, mean_length])
+            df_event.append([eid, template, occurence])
 
             for logid in currentNode.logIDL:
                 templates[logid-1] = template
                 ids[logid-1] = eid
 
-        df_event = pd.DataFrame(df_event, columns=['EventId', 'EventTemplate', 'Occurrences', 'Average Match Length'])
+        df_event = pd.DataFrame(df_event, columns=['EventId', 'EventTemplate', 'Occurrences'])
 
         self.df_log['EventId'] = ids
         self.df_log['EventTemplate'] = templates
