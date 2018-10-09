@@ -413,15 +413,12 @@ class Drain:
 		outputCeL = []
 
 		with open(self.para.path+self.para.logName) as lines:
-			for line in lines:
-				logID = int(line.split('\t')[0])
-				# logmessageL = re.split(self.para.delimiters, line.strip().split('\t')[1])
-				logmessageL = line.strip().split('\t')[1].split()
+			for logID, line in enumerate(lines):
+				logmessageL = re.split(self.para.delimiters, line.strip())
 
 				if self.para.removeCol is not None:
 					logmessageL = [word for i, word in enumerate(logmessageL) if i not in self.para.removeCol]
 				cookedLine = ' '.join(logmessageL)
-
 
 				#LAYER--Preprocessing
 				for currentRex in self.para.rex:
@@ -505,10 +502,12 @@ class Drain:
 # 	mt = 1
 
 # elif dataset == 2:
-# 	dataPath = '../data/datasets/HPC/'
-# 	removeCol = [0]
-# 	rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
-# 	mt = 1
+# path = '../../datasets/'
+# logName = 'HDFS.log'
+# dataPath = '../data/datasets/HPC/'
+# removeCol = []
+# rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+# mt = 1
 
 # elif dataset == 3:
 # 	dataPath = '../data/datasets/Thunderbird/'
@@ -516,11 +515,14 @@ class Drain:
 # 	mt = 1
 
 # elif dataset == 4:
-# 	dataPath = '../data/datasets/HDFS/'
-# 	removeCol = [0,1,2,3,4]
-# 	rex = [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
-# 	mt = 1
-# 	delimiters = '\s+'
+path = '../../datasets/'
+logName = 'HDFS.log'
+# path = '../data/2kHDFS/'
+# logName = 'rawlog.log'
+removeCol = [0,1,2,3,4]
+rex = [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+mt = 1
+delimiters = '\s+'
 
 # elif dataset == 5:
 # 	dataPath = '../data/datasets/Zookeeper/'
@@ -560,3 +562,8 @@ class Drain:
 # 	removeCol = [0,1,3,4]
 # 	rex = []
 # 	mt = 0.95
+
+
+para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
+myparser=Drain(para)
+myparser.mainProcess()
