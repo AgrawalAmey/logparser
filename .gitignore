@@ -56,3 +56,6 @@ docs/_build/
 target/
 
 logparser/results/
+benchmark/MoLFI_result
+benchmark/SHISO_result
+benchmark/Spell_result
