@@ -51,7 +51,7 @@ mt: similarity threshold for the merge step
 
 
 class Para:
-	def __init__(self, rex=None, path='', maxChild=120, logName='rawlog.log',removeCol=None,savePath='./results/',saveFileName='template', saveTempFileName='logTemplates.txt', delimiters=' ', mt=1):
+	def __init__(self, rex=None, path='', maxChild=120, logName='rawlog.log',removeCol=None,savePath='./results/Drain/',saveFileName='template', saveTempFileName='logTemplates.txt', delimiters=' ', mt=1):
 		self.path = path
 		self.maxChild = maxChild
 		self.logName = logName
@@ -506,7 +506,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'BGL.log',
-			savePath: '../../results/BGL/'
+			savePath: '../../results/Drain/BGL/'
 			removeCol: [0,1,2,3,4,5,6,7,8],
 			rex: [('core\.[0-9]*', 'coreNum')],
 			mt: 1,
@@ -515,7 +515,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'HPC.log',
-			savePath: '../../results/HPC/'
+			savePath: '../../results/Drain/HPC/'
 			removeCol: [0],
 			rex: [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')],
 			mt: 1,
@@ -524,7 +524,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'HDFS.log',
-			savePath: '../../results/HDFS/'
+			savePath: '../../results/Drain/HDFS/'
 			removeCol: [0,1,2,3,4],
 			rex: [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
 			mt: 1,
@@ -533,7 +533,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'Zookeeper.log',
-			savePath: '../../results/Zookeeper/'
+			savePath: '../../results/Drain/Zookeeper/'
 			removeCol: [0,1,2,3,4,5],
 			rex: [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
 			mt: 1,
@@ -542,7 +542,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'Linux.log',
-			savePath: '../../results/Linux/'
+			savePath: '../../results/Drain/Linux/'
 			removeCol: [],
 			rex: [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
 			mt: 1,
@@ -551,7 +551,7 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'Apache.log',
-			savePath: '../../results/Apache/'
+			savePath: '../../results/Drain/Apache/'
 			removeCol: [],
 			rex: [],
 			mt: 1,
@@ -560,39 +560,39 @@ configs = {
 		{
 			path: '../../datasets/'
 			logName: 'Proxifier.log',
-			savePath: '../../results/Proxifier/'
+			savePath: '../../results/Drain/Proxifier/'
 			removeCol: [0,1,3,4],
 			rex: [],
 			mt: 0.95,
 			delimiters: ' '
 		},
-		{
-			path: '../../qdatastes'
-			logName: 'Spark.log',
-			savePath: '../../results/Spark/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-				{
-			path: '../../qdatastes'
-			logName: 'Hive.log',
-			savePath: '../../results/Hive/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../qdatastes'
-			logName: 'Presto.log',
-			savePath: '../../results/Presto/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		}
+		# {
+		# 	path: '../../qdatastes'
+		# 	logName: 'Spark.log',
+		# 	savePath: '../../results/Drain/Spark/'
+		# 	removeCol: [],
+		# 	rex: [],
+		# 	mt: 1,
+		# 	delimiters: ' '
+		# },
+		# 		{
+		# 	path: '../../qdatastes'
+		# 	logName: 'Hive.log',
+		# 	savePath: '../../results/Drain/Hive/'
+		# 	removeCol: [],
+		# 	rex: [],
+		# 	mt: 1,
+		# 	delimiters: ' '
+		# },
+		# {
+		# 	path: '../../qdatastes'
+		# 	logName: 'Presto.log',
+		# 	savePath: '../../results/Drain/Presto/'
+		# 	removeCol: [],
+		# 	rex: [],
+		# 	mt: 1,
+		# 	delimiters: ' '
+		# }
 	]
 }
 
