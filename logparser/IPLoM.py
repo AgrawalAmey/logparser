@@ -699,97 +699,86 @@ class IPLoM:
 		for fileName in fileList:
 	 		os.remove(dirPath+"/"+fileName)
 
-configs = {
-	[
-		{
-			path: '../../datasets/'
-			logName: 'BGL.log',
-			savePath: '../../results/IPLoM/BGL/'
-			removeCol: [0,1,2,3,4,5,6,7,8],
-			rex: [('core\.[0-9]*', 'coreNum')],
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'HPC.log',
-			savePath: '../../results/IPLoM/HPC/'
-			removeCol: [0],
-			rex: [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')],
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'HDFS.log',
-			savePath: '../../results/IPLoM/HDFS/'
-			removeCol: [0,1,2,3,4],
-			rex: [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-			delimiters: '\s+'
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Zookeeper.log',
-			savePath: '../../results/IPLoM/Zookeeper/'
-			removeCol: [0,1,2,3,4,5],
-			rex: [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Linux.log',
-			savePath: '../../results/IPLoM/Linux/'
-			removeCol: [],
-			rex: [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Apache.log',
-			savePath: '../../results/IPLoM/Apache/'
-			removeCol: [],
-			rex: [],
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Proxifier.log',
-			savePath: '../../results/IPLoM/Proxifier/'
-			removeCol: [0,1,3,4],
-			rex: [],
-			delimiters: ' '
-		},
-		# {
-		# 	path: '../../qdatastes'
-		# 	logName: 'Spark.log',
-		# 	savePath: '../../results/IPLoM/Spark/'
-		# 	removeCol: [],
-		# 	rex: [],
-		# 	mt: 1,
-		# 	delimiters: ' '
-		# },
-		# 		{
-		# 	path: '../../qdatastes'
-		# 	logName: 'Hive.log',
-		# 	savePath: '../../results/IPLoM/Hive/'
-		# 	removeCol: [],
-		# 	rex: [],
-		# 	mt: 1,
-		# 	delimiters: ' '
-		# },
-		# {
-		# 	path: '../../qdatastes'
-		# 	logName: 'Presto.log',
-		# 	savePath: '../../results/IPLoM/Presto/'
-		# 	removeCol: [],
-		# 	rex: [],
-		# 	mt: 1,
-		# 	delimiters: ' '
-		# }
-	]
-}
+configs = [
+	{
+		'path': '../../datasets/',
+		'logName': 'BGL.log',
+		'savePath': '../../results/IPLoM/BGL/',
+		'removeCol': [0,1,2,3,4,5,6,7,8],
+		'rex': [('core\.[0-9]*', 'coreNum')]
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'HPC.log',
+		'savePath': '../../results/IPLoM/HPC/',
+		'removeCol': [0],
+		'rex': [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'HDFS.log',
+		'savePath': '../../results/IPLoM/HDFS/',
+		'removeCol': [0,1,2,3,4],
+		'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'Zookeeper.log',
+		'savePath': '../../results/IPLoM/Zookeeper/',
+		'removeCol': [0,1,2,3,4,5],
+		'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'Linux.log',
+		'savePath': '../../results/IPLoM/Linux/',
+		'removeCol': [],
+		'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')]
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'Apache.log',
+		'savePath': '../../results/IPLoM/Apache/',
+		'removeCol': [],
+		'rex': []
+	},
+	{
+		'path': '../../datasets/',
+		'logName': 'Proxifier.log',
+		'savePath': '../../results/IPLoM/Proxifier/',
+		'removeCol': [0,1,3,4],
+		'rex': []
+	},
+	# {
+	# 	'path': '../../qdatastes'
+	# 	'logName': 'Spark.log',
+	# 	'savePath': '../../results/IPLoM/Spark/',
+	# 	'removeCol': [],
+	# 	'rex': [],
+	# 	'mt': 1,
+	# },
+	# 		{
+	# 	'path': '../../qdatastes'
+	# 	'logName': 'Hive.log',
+	# 	'savePath': '../../results/IPLoM/Hive/',
+	# 	'removeCol': [],
+	# 	'rex': [],
+	# 	'mt': 1,
+
+	# },
+	# {
+	# 	'path': '../../qdatastes'
+	# 	'logName': 'Presto.log',
+	# 	'savePath': '../../results/IPLoM/Presto/',
+	# 	'removeCol': [],
+	# 	'rex': [],
+	# 	'mt': 1,
+	# }
+]
 
 for config in configs:
 	para = Para(rex=config["rex"], path=config["path"],
 				logname=config["logName"], removeCol=config["removeCol"],
-				delimiters=config["delimiters"], savePath=config["savePath"])
+				savePath=config["savePath"])
 	myparser = IPLoM(para)
 	myparser.mainProcess()
