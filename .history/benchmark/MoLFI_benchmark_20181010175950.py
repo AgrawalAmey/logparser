@@ -11,14 +11,14 @@ configs = [
     {
         path: '../../datasets/'
         logName: 'BGL.log',
-        savePath: '../../results/MoLFI/BGL/'
+        savePath: '../../results/BGL/'
         rex: ['core\.[0-9]*'],
         log_format: '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
     },
     {
         path: '../../datasets/'
         logName: 'HPC.log',
-        savePath: '../../results/MoLFI/HPC/'
+        savePath: '../../results/HPC/'
         rex: ['([0-9]+\.){3}[0-9]', 'node-[0-9]+'],
         log_format: '<LogId> <Node> <Component> <State> <Time> <Flag> <Content>',
     },
@@ -26,34 +26,34 @@ configs = [
         path: '../../datasets/'
         logName: 'HDFS.log',
         log_format: '<Date> <Time> <Pid> <Level> <Component>: <Content>',
-        savePath: '../../results/MoLFI/HDFS/'
+        savePath: '../../results/HDFS/'
         rex: ['blk_(|-)[0-9]+', '(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)'],
     },
     {
         path: '../../datasets/'
         logName: 'Zookeeper.log',
-        savePath: '../../results/MoLFI/Zookeeper/'
+        savePath: '../../results/Zookeeper/'
         rex: ['(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)'],
         log_format: '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>',
     },
     {
         path: '../../datasets/'
         logName: 'Linux.log',
-        savePath: '../../results/MoLFI/Linux/'
+        savePath: '../../results/Linux/'
         rex: ['([0-9]+\.){3}[0-9]+'],
         log_format: '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
     },
     {
         path: '../../datasets/'
         logName: 'Apache.log',
-        savePath: '../../results/MoLFI/Apache/'
-        rex: ['(\d+\.){3}\d+'],
+        savePath: '../../results/Apache/'
+        rex: [],
         log_format: '\[<Time>\] \[<Level>\] <Content>',
     },
     {
         path: '../../datasets/'
         logName: 'Proxifier.log',
-        savePath: '../../results/MoLFI/Proxifier/'
+        savePath: '../../results/Proxifier/'
         rex: ['<\d+\ssec', '([\w-]+\.)+[\w-]+(:\d+)?', '\d{2}:\d{2}(:\d{2})*', '\b[KGTM]?B\b'],
         log_format: '\[<Time>\] <Program> - <Content>',
     },
@@ -61,19 +61,19 @@ configs = [
     # 	path: '../../qdatastes'
     # 	logName: 'Spark.log',
     #     log_format: '<Date> <Time> <Level> <Component>: <Content>',
-    # 	savePath: '../../results/MoLFI/Spark/
+    # 	savePath: '../../results/Spark/
     # 	rex: [],
     # },
     # 		{
     # 	path: '../../qdatastes'
     # 	logName: 'Hive.log',
-    # 	savePath: '../../results/MoLFI/Hive/
+    # 	savePath: '../../results/Hive/
     # 	rex: [],
     # },
     # {
     # 	path: '../../qdatastes'
     # 	logName: 'Presto.log',
-    # 	savePath: '../../results/MoLFI/Presto/
+    # 	savePath: '../../results/Presto/
     # 	rex: [],
     # }
 ]

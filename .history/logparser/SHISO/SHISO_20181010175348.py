@@ -363,7 +363,7 @@ class LogParser:
             logmessageL = line['Content']
             if self.rex:
                 for currentRex in self.rex:
-                    logmessageL = re.sub(currentRex[0], currentRex[1], logmessageL)
+                    logmessageL = re.sub(currentRex[0], currentRex[0], logmessageL)
             logmessageL = logmessageL.strip().split()
             currentNode = Node(format=logmessageL, logIDL=[ID], logLengthL=[len(logmessageL)])
 
