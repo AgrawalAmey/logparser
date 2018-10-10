@@ -566,33 +566,6 @@ configs = {
 			mt: 0.95,
 			delimiters: ' '
 		},
-		{
-			path: '../../qdatastes'
-			logName: 'Spark.log',
-			savePath: '../../results/Spark/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-				{
-			path: '../../qdatastes'
-			logName: 'Hive.log',
-			savePath: '../../results/Hive/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../qdatastes'
-			logName: 'Presto.log',
-			savePath: '../../results/Presto/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		}
 	]
 }
 

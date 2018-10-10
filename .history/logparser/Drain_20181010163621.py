@@ -499,106 +499,85 @@ class Drain:
 		gc.collect()
 		return t2-t1
 
+# Experimental Settings
+# if dataset == 1:
+# 	dataPath = '../data/datasets/BGL/'
+# 	# removeCol = [0,1,2,3,4,5,6,7,8,9,10]
+# 	removeCol = [0,1,2,3,4,5,6,7,8]
+
+# 	rex = [('core\.[0-9]*', 'coreNum')]
+# 	mt = 1
+
+# elif dataset == 2:
+path = '../../datasets/'
+logName = 'HPC.log'
+removeCol = [0]
+rex = [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+mt = 1
+para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, mt=mt)
+myparser=Drain(para)
+myparser.mainProcess()
 
 
-configs = {
-	[
-		{
-			path: '../../datasets/'
-			logName: 'BGL.log',
-			savePath: '../../results/BGL/'
-			removeCol: [0,1,2,3,4,5,6,7,8],
-			rex: [('core\.[0-9]*', 'coreNum')],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'HPC.log',
-			savePath: '../../results/HPC/'
-			removeCol: [0],
-			rex: [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'HDFS.log',
-			savePath: '../../results/HDFS/'
-			removeCol: [0,1,2,3,4],
-			rex: [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-			mt: 1,
-			delimiters: '\s+'
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Zookeeper.log',
-			savePath: '../../results/Zookeeper/'
-			removeCol: [0,1,2,3,4,5],
-			rex: [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Linux.log',
-			savePath: '../../results/Linux/'
-			removeCol: [],
-			rex: [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Apache.log',
-			savePath: '../../results/Apache/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../datasets/'
-			logName: 'Proxifier.log',
-			savePath: '../../results/Proxifier/'
-			removeCol: [0,1,3,4],
-			rex: [],
-			mt: 0.95,
-			delimiters: ' '
-		},
-		{
-			path: '../../qdatastes'
-			logName: 'Spark.log',
-			savePath: '../../results/Spark/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-				{
-			path: '../../qdatastes'
-			logName: 'Hive.log',
-			savePath: '../../results/Hive/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../qdatastes'
-			logName: 'Presto.log',
-			savePath: '../../results/Presto/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		}
-	]
-}
+# elif dataset == 3:
+# 	dataPath = '../data/datasets/Thunderbird/'
+# 	rex = [('([0-9]+\.){3}[0-9]+', 'IPAdd')]
+# 	mt = 1
 
-for config in configs:
-	para = Para(rex=config["rex"], path=config["path"],
-				logName=config["logName"], removeCol=config["removeCol"],
-				mt=config["mt"], delimiters=config["delimiters"], savePath=config["savePath"])
-	myparser = Drain(para)
-	myparser.mainProcess()
+# elif dataset == 4:
+# path = '../../datasets/'
+# logName = 'HDFS.log'
+# # path = '../data/2kHDFS/'
+# # logName = 'rawlog.log'
+# removeCol = [0,1,2,3,4]
+# rex = [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+# mt = 1
+# delimiters = '\s+'
+# para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
+# myparser=Drain(para)
+# myparser.mainProcess()
+
+
+# elif dataset == 5:
+# 	dataPath = '../data/datasets/Zookeeper/'
+# 	# removeCol = [0,1,2,3,4,5,6,7,8]
+# 	removeCol = [0,1,2,3,4,5]
+
+# 	rex = [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+# 	mt = 1.0
+
+# elif dataset == 6:
+# 	dataPath = '../data/datasets/Hadoop/'
+# 	rex = []
+# 	mt = 1
+
+# elif dataset == 7:
+# 	dataPath = '../data/datasets/Spark/'
+# 	rex = []
+# 	mt = 1
+
+# elif dataset == 8:
+# 	dataPath = '../data/datasets/Windows/'
+# 	rex = []
+# 	mt = 1
+
+# elif dataset == 9:
+# 	dataPath = '../data/datasets/Linux/'
+# 	rex = [('([0-9]+\.){3}[0-9]+', 'IPAdd')]
+# 	mt = 1
+
+# elif dataset == 10:
+# 	dataPath = '../data/datasets/Apache/'
+# 	rex = []
+# 	mt = 1
+
+# else:
+# 	dataPath = '../data/datasets/Proxifier/'
+# 	removeCol = [0,1,3,4]
+# 	rex = []
+# 	mt = 0.95
+
+
+# para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, delimiters=delimiters, mt=mt)
+# myparser=Drain(para)
+# myparser.mainProcess()

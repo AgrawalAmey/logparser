@@ -501,7 +501,7 @@ class Drain:
 
 
 
-configs = {
+config = {
 	[
 		{
 			path: '../../datasets/'
@@ -566,39 +566,10 @@ configs = {
 			mt: 0.95,
 			delimiters: ' '
 		},
-		{
-			path: '../../qdatastes'
-			logName: 'Spark.log',
-			savePath: '../../results/Spark/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-				{
-			path: '../../qdatastes'
-			logName: 'Hive.log',
-			savePath: '../../results/Hive/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		},
-		{
-			path: '../../qdatastes'
-			logName: 'Presto.log',
-			savePath: '../../results/Presto/'
-			removeCol: [],
-			rex: [],
-			mt: 1,
-			delimiters: ' '
-		}
 	]
 }
 
-for config in configs:
-	para = Para(rex=config["rex"], path=config["path"],
-				logName=config["logName"], removeCol=config["removeCol"],
-				mt=config["mt"], delimiters=config["delimiters"], savePath=config["savePath"])
-	myparser = Drain(para)
-	myparser.mainProcess()
+
+para = Para(rex=rex, path=path, logName=logName, removeCol=removeCol, mt=mt)
+myparser=Drain(para)
+myparser.mainProcess()
