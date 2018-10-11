@@ -163,6 +163,8 @@ class IPLoM:
 
 			#Find the column with minimum unique tokens
 			minColumnIdx = 0
+			if len(uniqueTokensCountLS) < 1:
+				continue
 			minColumnCount = len(uniqueTokensCountLS[0])
 
 			for columnIdx in range(partition.lenOfLogs):
