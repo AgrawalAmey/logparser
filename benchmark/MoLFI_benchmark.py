@@ -36,13 +36,13 @@ configs = [
         'rex': ['(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)'],
         'log_format': '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>',
     },
-    {
-        'path': '../../datasets/',
-        'logName': 'Linux.log',
-        'savePath': '../../results/MoLFI/Linux/',
-        'rex': ['([0-9]+\.){3}[0-9]+'],
-        'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Linux.log',
+    #     'savePath': '../../results/MoLFI/Linux/',
+    #     'rex': ['([0-9]+\.){3}[0-9]+'],
+    #     'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
+    # },
     {
         'path': '../../datasets/',
         'logName': 'Apache.log',
