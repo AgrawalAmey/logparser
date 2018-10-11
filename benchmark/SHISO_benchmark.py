@@ -8,17 +8,17 @@ import pandas as pd
 
 
 configs = [
-    {
-        'path': '../../datasets/',
-        'logName': 'BGL.log',
-        'savePath': '../../results/SHISO/BGL/',
-        'rex': [('core\.[0-9]*', 'coreNum')],
-        'log_format': '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
-        'maxChildNum': 4,
-        'mergeThreshold': 0.1,
-        'formatLookupThreshold': 0.3,
-        'superFormatThreshold': 0.85
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'BGL.log',
+    #     'savePath': '../../results/SHISO/BGL/',
+    #     'rex': [('core\.[0-9]*', 'coreNum')],
+    #     'log_format': '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
+    #     'maxChildNum': 4,
+    #     'mergeThreshold': 0.1,
+    #     'formatLookupThreshold': 0.3,
+    #     'superFormatThreshold': 0.85
+    # },
     {
         'path': '../../datasets/',
         'logName': 'HPC.log',
@@ -30,17 +30,17 @@ configs = [
         'formatLookupThreshold': 0.3,
         'superFormatThreshold': 0.85
     },
-    {
-        'path': '../../datasets/',
-        'logName': 'HDFS.log',
-        'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
-        'savePath': '../../results/SHISO/HDFS/',
-        'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-        'maxChildNum': 4,
-        'mergeThreshold': 0.1,
-        'formatLookupThreshold': 0.3,
-        'superFormatThreshold': 0.85
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'HDFS.log',
+    #     'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
+    #     'savePath': '../../results/SHISO/HDFS/',
+    #     'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
+    #     'maxChildNum': 4,
+    #     'mergeThreshold': 0.1,
+    #     'formatLookupThreshold': 0.3,
+    #     'superFormatThreshold': 0.85
+    # },
     {
         'path': '../../datasets/',
         'logName': 'Zookeeper.log',
