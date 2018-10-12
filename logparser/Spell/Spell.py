@@ -268,8 +268,8 @@ class LogParser:
                 matchCluster.logIDL.append(logID)
                 matchCluster.logLengthL.append(logLength)
             count += 1
-            if count % 1000 == 0 or count == len(self.df_log):
-                print 'Processed {0:.1f}% of log lines.'.format(count * 100.0 / len(self.df_log))
+            # if count % 1000 == 0 or count == len(self.df_log):
+            #     print 'Processed {0:.1f}% of log lines.'.format(count * 100.0 / len(self.df_log))
             
         if not os.path.exists(self.savePath):
             os.makedirs(self.savePath)
