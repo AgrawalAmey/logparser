@@ -502,42 +502,42 @@ class Drain:
 
 
 configs = [
-	{
-		'path': '../../datasets/',
-		'logName': 'BGL.log',
-		'savePath': '../../results/Drain/BGL/',
-		'removeCol': [0,1,2,3,4,5,6,7,8],
-		'rex': [('core\.[0-9]*', 'coreNum')],
-		'mt': 1,
-		'delimiters': ' '
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'HPC.log',
-		'savePath': '../../results/Drain/HPC/',
-		'removeCol': [0],
-		'rex': [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')],
-		'mt': 1,
-		'delimiters': ' '
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'HDFS.log',
-		'savePath': '../../results/Drain/HDFS/',
-		'removeCol': [0,1,2,3,4],
-		'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-		'mt': 1,
-		'delimiters': '\s+'
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Zookeeper.log',
-		'savePath': '../../results/Drain/Zookeeper/',
-		'removeCol': [0,1,2,3,4,5],
-		'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-		'mt': 1,
-		'delimiters': ' '
-	},
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'BGL.log',
+	# 	'savePath': '../../results/Drain/BGL/',
+	# 	'removeCol': [0,1,2,3,4,5,6,7,8],
+	# 	'rex': [('core\.[0-9]*', 'coreNum')],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'HPC.log',
+	# 	'savePath': '../../results/Drain/HPC/',
+	# 	'removeCol': [0],
+	# 	'rex': [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'HDFS.log',
+	# 	'savePath': '../../results/Drain/HDFS/',
+	# 	'removeCol': [0,1,2,3,4],
+	# 	'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
+	# 	'mt': 1,
+	# 	'delimiters': '\s+'
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Zookeeper.log',
+	# 	'savePath': '../../results/Drain/Zookeeper/',
+	# 	'removeCol': [0,1,2,3,4,5],
+	# 	'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
 	# {
 	# 	'path': '../../datasets/',
 	# 	'logName': 'Linux.log',
@@ -565,15 +565,15 @@ configs = [
 	# 	'mt': 0.95,
 	# 	'delimiters': ' '
 	# },
-	# # {
-	# 	'path': '../../qdatastes'
-	# 	'logName': 'Spark.log',
-	# 	'savePath': '../../results/Drain/Spark/',
-	# 	'removeCol': [],
-	# 	'rex': [],
-	# 	'mt': 1,
-	# 	'delimiters': ' '
-	# },
+	# {
+		'path': '/media/ephemeral0'
+		'logName': 'spark_13m.log',
+		'savePath': '../../results/Drain/Spark-13M/',
+		'removeCol': [0, 1, 2],
+		'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')],
+		'mt': 1,
+		'delimiters': ' '
+	},
 	# 		{
 	# 	'path': '../../qdatastes'
 	# 	'logName': 'Hive.log',
