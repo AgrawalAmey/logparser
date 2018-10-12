@@ -38,7 +38,7 @@ class Para:
 	"""
 
 	def __init__(self, path='../Data/2kProxifier/',logname='rawlog.log', savePath='./results_IPLoM/2kProxifier/',
-				 saveFileName='template', maxEventLen = 800, step2Support = 0, PST = 0.0,
+				 saveFileName='template', maxEventLen = 2000, step2Support = 0, PST = 0.0,
 				 CT = 0.35, lowerBound = 0.25, upperBound = 0.9, usePST = False,
 				 removable=True, removeCol=[0,1,2,3,4],regular=True, rex=[('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]):
 		self.maxEventLen = maxEventLen
