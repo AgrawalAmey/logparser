@@ -538,34 +538,34 @@ configs = [
 		'mt': 1,
 		'delimiters': ' '
 	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Linux.log',
-		'savePath': '../../results/Drain/Linux/',
-		'removeCol': [],
-		'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
-		'mt': 1,
-		'delimiters': ' '
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Apache.log',
-		'savePath': '../../results/Drain/Apache/',
-		'removeCol': [],
-		'rex': [],
-		'mt': 1,
-		'delimiters': ' '
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Proxifier.log',
-		'savePath': '../../results/Drain/Proxifier/',
-		'removeCol': [0,1,3,4],
-		'rex': [],
-		'mt': 0.95,
-		'delimiters': ' '
-	},
 	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Linux.log',
+	# 	'savePath': '../../results/Drain/Linux/',
+	# 	'removeCol': [],
+	# 	'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Apache.log',
+	# 	'savePath': '../../results/Drain/Apache/',
+	# 	'removeCol': [],
+	# 	'rex': [],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Proxifier.log',
+	# 	'savePath': '../../results/Drain/Proxifier/',
+	# 	'removeCol': [0,1,3,4],
+	# 	'rex': [],
+	# 	'mt': 0.95,
+	# 	'delimiters': ' '
+	# },
+	# # {
 	# 	'path': '../../qdatastes'
 	# 	'logName': 'Spark.log',
 	# 	'savePath': '../../results/Drain/Spark/',

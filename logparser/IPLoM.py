@@ -730,27 +730,27 @@ configs = [
 		'removeCol': [0,1,2,3,4,5],
 		'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
 	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Linux.log',
-		'savePath': '../../results/IPLoM/Linux/',
-		'removeCol': [],
-		'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')]
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Apache.log',
-		'savePath': '../../results/IPLoM/Apache/',
-		'removeCol': [],
-		'rex': []
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Proxifier.log',
-		'savePath': '../../results/IPLoM/Proxifier/',
-		'removeCol': [0,1,3,4],
-		'rex': []
-	},
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Linux.log',
+	# 	'savePath': '../../results/IPLoM/Linux/',
+	# 	'removeCol': [],
+	# 	'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')]
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Apache.log',
+	# 	'savePath': '../../results/IPLoM/Apache/',
+	# 	'removeCol': [],
+	# 	'rex': []
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Proxifier.log',
+	# 	'savePath': '../../results/IPLoM/Proxifier/',
+	# 	'removeCol': [0,1,3,4],
+	# 	'rex': []
+	# },
 	# {
 	# 	'path': '../../qdatastes'
 	# 	'logName': 'Spark.log',
