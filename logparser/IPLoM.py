@@ -121,9 +121,11 @@ class IPLoM:
 				# 	print(lineCount)
 
 				#Add current log to the corresponding partition
-				self.partitionsL[len(wordSeq)-1].logLL.append(wordSeq)
-				self.partitionsL[len(wordSeq)-1].numOfLogs += 1
-
+				if len(wordSeq) > 0:
+					self.partitionsL[len(wordSeq)-1].logLL.append(wordSeq)
+					self.partitionsL[len(wordSeq)-1].numOfLogs += 1
+				else:
+					continue
 			for partition in self.partitionsL:
 				if partition.numOfLogs == 0:
 					partition.valid = False
