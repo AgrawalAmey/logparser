@@ -8,14 +8,14 @@ import pandas as pd
 
 
 configs = [
-    {
-        'path': '../../datasets/',
-        'logName': 'BGL.log',
-        'savePath': '../../results/Spell/BGL/',
-        'rex': [('core\.[0-9]*', 'coreNum')],
-        'log_format': '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
-        'tau': 0.75
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'BGL.log',
+    #     'savePath': '../../results/Spell/BGL/',
+    #     'rex': [('core\.[0-9]*', 'coreNum')],
+    #     'log_format': '<Label> <Timestamp> <Date> <Node> <Time> <NodeRepeat> <Type> <Component> <Level> <Content>',
+    #     'tau': 0.75
+    # },
     {
         'path': '../../datasets/',
         'logName': 'HPC.log',
@@ -24,14 +24,14 @@ configs = [
         'log_format': '<LogId> <Node> <Component> <State> <Time> <Flag> <Content>',
         'tau': 0.65
     },
-    {
-        'path': '../../datasets/',
-        'logName': 'HDFS.log',
-        'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
-        'savePath': '../../results/Spell/HDFS/',
-        'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
-        'tau': 0.7
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'HDFS.log',
+    #     'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
+    #     'savePath': '../../results/Spell/HDFS/',
+    #     'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')],
+    #     'tau': 0.7
+    # },
     {
         'path': '../../datasets/',
         'logName': 'Zookeeper.log',
