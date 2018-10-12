@@ -703,33 +703,40 @@ class IPLoM:
 
 configs = [
 	{
-		'path': '../../datasets/',
-		'logName': 'BGL.log',
-		'savePath': '../../results/IPLoM/BGL/',
-		'removeCol': [0,1,2,3,4,5,6,7,8],
-		'rex': [('core\.[0-9]*', 'coreNum')]
+		'path': '/media/ephemeral0/',
+		'logName': 'spark_13m.log',
+		'savePath': '../../results/IPLoM/Spark-13M/',
+		'removeCol': [0, 1, 2],
+		'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')]
 	},
-	{
-		'path': '../../datasets/',
-		'logName': 'HPC.log',
-		'savePath': '../../results/IPLoM/HPC/',
-		'removeCol': [0],
-		'rex': [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'HDFS.log',
-		'savePath': '../../results/IPLoM/HDFS/',
-		'removeCol': [0,1,2,3,4],
-		'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
-	},
-	{
-		'path': '../../datasets/',
-		'logName': 'Zookeeper.log',
-		'savePath': '../../results/IPLoM/Zookeeper/',
-		'removeCol': [0,1,2,3,4,5],
-		'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
-	},
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'BGL.log',
+	# 	'savePath': '../../results/IPLoM/BGL/',
+	# 	'removeCol': [0,1,2,3,4,5,6,7,8],
+	# 	'rex': [('core\.[0-9]*', 'coreNum')]
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'HPC.log',
+	# 	'savePath': '../../results/IPLoM/HPC/',
+	# 	'removeCol': [0],
+	# 	'rex': [('([0-9]+\.){3}[0-9]', 'IPAdd'), ('node-[0-9]+', 'nodeNum')]
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'HDFS.log',
+	# 	'savePath': '../../results/IPLoM/HDFS/',
+	# 	'removeCol': [0,1,2,3,4],
+	# 	'rex': [('blk_(|-)[0-9]+', 'blkID'), ('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+	# },
+	# {
+	# 	'path': '../../datasets/',
+	# 	'logName': 'Zookeeper.log',
+	# 	'savePath': '../../results/IPLoM/Zookeeper/',
+	# 	'removeCol': [0,1,2,3,4,5],
+	# 	'rex': [('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', 'IPAddandPortID')]
+	# },
 	# {
 	# 	'path': '../../datasets/',
 	# 	'logName': 'Linux.log',
