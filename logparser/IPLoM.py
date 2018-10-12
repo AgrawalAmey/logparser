@@ -232,8 +232,8 @@ class IPLoM:
 					p1Set.add(logL[p1])
 					p2Set.add(logL[p2])
 
-					if (logL[p1] == logL[p2]):
-						print ("!!  p1 may be equal to p2")
+					# if (logL[p1] == logL[p2]):
+					# 	print ("!!  p1 may be equal to p2")
 
 					if logL[p1] not in mapRelation1DS:
 						mapRelation1DS[ logL[p1] ] = set()
