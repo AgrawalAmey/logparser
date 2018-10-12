@@ -565,7 +565,7 @@ configs = [
 	# 	'mt': 0.95,
 	# 	'delimiters': ' '
 	# },
-	# {
+	{
 		'path': '/media/ephemeral0'
 		'logName': 'spark_13m.log',
 		'savePath': '../../results/Drain/Spark-13M/',
