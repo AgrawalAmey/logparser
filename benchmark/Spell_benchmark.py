@@ -40,30 +40,30 @@ configs = [
         'log_format': '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>',
         'tau': 0.7
     },
-    {
-        'path': '../../datasets/',
-        'logName': 'Linux.log',
-        'savePath': '../../results/Spell/Linux/',
-        'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
-        'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
-        'tau': 0.55
-    },
-    {
-        'path': '../../datasets/',
-        'logName': 'Apache.log',
-        'savePath': '../../results/Spell/Apache/',
-        'rex': [('(\d+\.){3}\d+', '')],
-        'log_format': '\[<Time>\] \[<Level>\] <Content>',
-        'tau': 0.6
-    },
-    {
-        'path': '../../datasets/',
-        'logName': 'Proxifier.log',
-        'savePath': '../../results/Spell/Proxifier/',
-        'rex': [('<\d+\ssec', ''), ('([\w-]+\.)+[\w-]+(:\d+)?', ''), ('\d{2}:\d{2}(:\d{2})*', ''), ('\b[KGTM]?B\b', '')],
-        'log_format': '\[<Time>\] <Program> - <Content>',
-        'tau': 0.85
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Linux.log',
+    #     'savePath': '../../results/Spell/Linux/',
+    #     'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
+    #     'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
+    #     'tau': 0.55
+    # },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Apache.log',
+    #     'savePath': '../../results/Spell/Apache/',
+    #     'rex': [('(\d+\.){3}\d+', '')],
+    #     'log_format': '\[<Time>\] \[<Level>\] <Content>',
+    #     'tau': 0.6
+    # },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Proxifier.log',
+    #     'savePath': '../../results/Spell/Proxifier/',
+    #     'rex': [('<\d+\ssec', ''), ('([\w-]+\.)+[\w-]+(:\d+)?', ''), ('\d{2}:\d{2}(:\d{2})*', ''), ('\b[KGTM]?B\b', '')],
+    #     'log_format': '\[<Time>\] <Program> - <Content>',
+    #     'tau': 0.85
+    # },
     # {
     # 	'path': '../../qdatastes'
     # 	'logName': 'Spark.log',

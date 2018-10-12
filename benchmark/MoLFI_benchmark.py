@@ -43,20 +43,20 @@ configs = [
     #     'rex': ['([0-9]+\.){3}[0-9]+'],
     #     'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
     # },
-    {
-        'path': '../../datasets/',
-        'logName': 'Apache.log',
-        'savePath': '../../results/MoLFI/Apache/',
-        'rex': ['(\d+\.){3}\d+'],
-        'log_format': '\[<Time>\] \[<Level>\] <Content>',
-    },
-    {
-        'path': '../../datasets/',
-        'logName': 'Proxifier.log',
-        'savePath': '../../results/MoLFI/Proxifier/',
-        'rex': ['<\d+\ssec', '([\w-]+\.)+[\w-]+(:\d+)?', '\d{2}:\d{2}(:\d{2})*', '\b[KGTM]?B\b'],
-        'log_format': '\[<Time>\] <Program> - <Content>',
-    }
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Apache.log',
+    #     'savePath': '../../results/MoLFI/Apache/',
+    #     'rex': ['(\d+\.){3}\d+'],
+    #     'log_format': '\[<Time>\] \[<Level>\] <Content>',
+    # },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Proxifier.log',
+    #     'savePath': '../../results/MoLFI/Proxifier/',
+    #     'rex': ['<\d+\ssec', '([\w-]+\.)+[\w-]+(:\d+)?', '\d{2}:\d{2}(:\d{2})*', '\b[KGTM]?B\b'],
+    #     'log_format': '\[<Time>\] <Program> - <Content>',
+    # }
     # # {
     # # 	'path': '../../qdatastes'
     # '# 	logName': 'Spark.log',

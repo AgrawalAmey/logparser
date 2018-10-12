@@ -52,39 +52,39 @@ configs = [
         'formatLookupThreshold': 0.3,
         'superFormatThreshold': 0.85
     },
-    {
-        'path': '../../datasets/',
-        'logName': 'Linux.log',
-        'savePath': '../../results/SHISO/Linux/',
-        'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
-        'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
-        'maxChildNum': 4,
-        'mergeThreshold': 0.1,
-        'formatLookupThreshold': 0.3,
-        'superFormatThreshold': 0.85
-    },
-    {
-        'path': '../../datasets/',
-        'logName': 'Apache.log',
-        'savePath': '../../results/SHISO/Apache/',
-        'rex': [('(\d+\.){3}\d+', '')],
-        'log_format': '\[<Time>\] \[<Level>\] <Content>',
-        'maxChildNum': 4,
-        'mergeThreshold': 0.1,
-        'formatLookupThreshold': 0.3,
-        'superFormatThreshold': 0.85
-    },
-    {
-        'path': '../../datasets/',
-        'logName': 'Proxifier.log',
-        'savePath': '../../results/SHISO/Proxifier/',
-        'rex': [('<\d+\ssec', ''), ('([\w-]+\.)+[\w-]+(:\d+)?', ''), ('\d{2}:\d{2}(:\d{2})*', ''), ('\b[KGTM]?B\b', '')],
-        'log_format': '\[<Time>\] <Program> - <Content>',
-        'maxChildNum': 4,
-        'mergeThreshold': 0.002,
-        'formatLookupThreshold': 0.3,
-        'superFormatThreshold': 0.85
-    },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Linux.log',
+    #     'savePath': '../../results/SHISO/Linux/',
+    #     'rex': [('([0-9]+\.){3}[0-9]+', 'IPAdd')],
+    #     'log_format': '<Month> <Date> <Time> <Level> <Component>(\[<PID>\])?: <Content>',
+    #     'maxChildNum': 4,
+    #     'mergeThreshold': 0.1,
+    #     'formatLookupThreshold': 0.3,
+    #     'superFormatThreshold': 0.85
+    # },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Apache.log',
+    #     'savePath': '../../results/SHISO/Apache/',
+    #     'rex': [('(\d+\.){3}\d+', '')],
+    #     'log_format': '\[<Time>\] \[<Level>\] <Content>',
+    #     'maxChildNum': 4,
+    #     'mergeThreshold': 0.1,
+    #     'formatLookupThreshold': 0.3,
+    #     'superFormatThreshold': 0.85
+    # },
+    # {
+    #     'path': '../../datasets/',
+    #     'logName': 'Proxifier.log',
+    #     'savePath': '../../results/SHISO/Proxifier/',
+    #     'rex': [('<\d+\ssec', ''), ('([\w-]+\.)+[\w-]+(:\d+)?', ''), ('\d{2}:\d{2}(:\d{2})*', ''), ('\b[KGTM]?B\b', '')],
+    #     'log_format': '\[<Time>\] <Program> - <Content>',
+    #     'maxChildNum': 4,
+    #     'mergeThreshold': 0.002,
+    #     'formatLookupThreshold': 0.3,
+    #     'superFormatThreshold': 0.85
+    # },
     # {
     #     'path': '../../qdatastes'
     #     'logName': 'Spark.log',
