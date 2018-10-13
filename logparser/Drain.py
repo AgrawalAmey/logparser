@@ -576,8 +576,8 @@ configs = [
 	# },
 		{
 		'path': '/media/ephemeral0/',
-		'logName': 'presto_5.2m.txt',
-		'savePath': '../../results/Drain/Presto-5.2M/',
+		'logName': 'presto_l.txt',
+		'savePath': '../../results/Drain/Presto/',
 		'removeCol': [0, 1],
 		'rex': [('(\d+\.){3}\d+', ''), ('([\w-]+\.){2,}[\w-]+', ''),
 				('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', '')],
