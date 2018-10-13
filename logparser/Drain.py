@@ -565,12 +565,22 @@ configs = [
 	# 	'mt': 0.95,
 	# 	'delimiters': ' '
 	# },
-	{
+	# {
+	# 	'path': '/media/ephemeral0/',
+	# 	'logName': 'spark_13m.log',
+	# 	'savePath': '../../results/Drain/Spark-13M/',
+	# 	'removeCol': [0, 1, 2],
+	# 	'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')],
+	# 	'mt': 1,
+	# 	'delimiters': ' '
+	# },
+		{
 		'path': '/media/ephemeral0/',
-		'logName': 'spark_13m.log',
-		'savePath': '../../results/Drain/Spark-13M/',
-		'removeCol': [0, 1, 2],
-		'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')],
+		'logName': 'presto_13m.log',
+		'savePath': '../../results/Drain/Presto-13M/',
+		'removeCol': [0, 1],
+		'rex': [('(\d+\.){3}\d+', ''), ('([\w-]+\.){2,}[\w-]+', ''),
+				('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', '')],
 		'mt': 1,
 		'delimiters': ' '
 	},

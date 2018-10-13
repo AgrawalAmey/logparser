@@ -704,12 +704,20 @@ class IPLoM:
 	 		os.remove(dirPath+"/"+fileName)
 
 configs = [
-	{
+	# {
+	# 	'path': '/media/ephemeral0/',
+	# 	'logName': 'spark_26m.log',
+	# 	'savePath': '../../results/IPLoM/Spark-26M/',
+	# 	'removeCol': [0, 1, 2],
+	# 	'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')]
+	# },
+			{
 		'path': '/media/ephemeral0/',
-		'logName': 'spark_26m.log',
-		'savePath': '../../results/IPLoM/Spark-26M/',
-		'removeCol': [0, 1, 2],
-		'rex': [('(\d+\.){3}\d+', ''), ('\b[KGTM]?B\b', ''), ('([\w-]+\.){2,}[\w-]+', '')]
+		'logName': 'presto_13m.log',
+		'savePath': '../../results/IPLoM/Presto-13M/',
+		'removeCol': [0, 1],
+		'rex': [('(\d+\.){3}\d+', ''), ('([\w-]+\.){2,}[\w-]+', ''),
+				('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', '')]
 	},
 	# {
 	# 	'path': '../../datasets/',
