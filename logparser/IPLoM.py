@@ -713,8 +713,8 @@ configs = [
 	# },
 			{
 		'path': '/media/ephemeral0/',
-		'logName': 'presto_2.6m.txt',
-		'savePath': '../../results/IPLoM/Presto-13M/',
+		'logName': 'presto_5.2m.txt',
+		'savePath': '../../results/IPLoM/Presto-5.2M/',
 		'removeCol': [0, 1],
 		'rex': [('(\d+\.){3}\d+', ''), ('([\w-]+\.){2,}[\w-]+', ''),
 				('(/|)([0-9]+\.){3}[0-9]+(:[0-9]+|)(:|)', '')]
